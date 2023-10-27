@@ -38,7 +38,13 @@ The training code is provided in the Jupyter Notebook cells below. It includes d
 ## Model Prediction and IOC Extraction
 
 After training, you can use the trained model to predict MITRE ATT&CK techniques for an incident summary and extract indicators of compromise (IoCs). The provided Jupyter Notebook cells load the trained model and tokenizer, and allow you to input incident summaries for prediction. The model can provide predictions for multiple techniques, and you can set a confidence threshold to filter the results.
+The model is configured to predict multiple classes (techniques) based on a confidence threshold. Specifically, it predicts multi-classes when the confidence scores for a given class (technique) are greater than 0.95. 
+###Example
+Input:
+![Alt Text](https://github.com/fardinbh/TextClassification-MitreAttackMapping/blob/ba23b81f36d9a4e8d16e7025e80145fc61218a7a/images/1.png?raw=true)
 
+Output:
+![Alt Text](https://github.com/fardinbh/TextClassification-MitreAttackMapping/blob/ba23b81f36d9a4e8d16e7025e80145fc61218a7a/images/3.png?raw=true)
 ## Model Explainability
 
 The script also offers model explainability using the LIME (Local Interpretable Model-Agnostic Explanations) method. You can enable model explainability to gain insights into how the model made its predictions.
